@@ -1,0 +1,25 @@
+<!-- <p>Home works!</p> -->
+
+
+<div class="container">
+    <h1 class="text-center mt-4 mb-4" style="color: #3491cf;">Home Page</h1>
+    <div style="padding-top: 4rem;">
+        <input type="file" (change)="onFileChange($event)" multiple="false">
+    </div>
+    <div style="text-align: right;">
+        <a [routerLink]="['/display']" class="btn btn-primary">Display Data</a>
+    </div>
+    <p>{{mssg}}</p>
+
+    <div *ngIf="update"
+        class="alert alert-danger">
+        <div>
+            Sheet already exists!
+            Do you want to update the data to DB for the sheets rather than pushing all the data to DB directly?
+            <div>
+                <button class="btn-btn-primary" (click)="onClickUpdate(true)">Yes</button>
+            <button class="btn-btn-primary" (click)="onClickUpdate(false)">No</button>
+            </div> 
+        </div>
+    </div>
+</div>
